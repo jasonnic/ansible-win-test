@@ -1,4 +1,4 @@
 ---
 
 - name: Copying file test.txt to C:\ANSIBLE_TEST
-    win_copy: src=files/test.txt to C:/ANSIBLE_TEST
+  win_copy: src=files/test.txt dest=c:/ANSIBLE_TEST/
