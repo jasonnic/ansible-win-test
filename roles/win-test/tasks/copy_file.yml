@@ -1,5 +1,4 @@
 ---
-- name: Copy file from Linux controler to Windows
-  tasks:
-   - name: Copying file application1.ini to C:\ANSIBLE_TEST
-     win_copy: src=files/test.txt to C:\\woANSIBLE_TESTrk
+
+- name: Copying file test.txt to C:\ANSIBLE_TEST
+    win_copy: src=files/test.txt to C:\\woANSIBLE_TESTrk

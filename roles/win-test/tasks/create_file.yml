@@ -1,7 +1,7 @@
 ---
-- name: Create Test File & Directory
-  tasks:
-   - name: Create Empty Directory C:\ANSIBLE_TEST  
-     win_file: path=C:\\ANSIBLE_TEST state=directory
-   - name: Create file C:\ANSIBLE_TEST\ANSIBLE_TEST.txt
-     win_file: path=C:\\ANSIBLE_TEST\ANSIBLE_TEST.txt state=touch
+
+- name: Create Empty Directory C:\ANSIBLE_TEST  
+  win_file: path=C:\\ANSIBLE_TEST state=directory
+
+- name: Create file C:\ANSIBLE_TEST\ANSIBLE_TEST.txt
+  win_file: path=C:\\ANSIBLE_TEST\ANSIBLE_TEST.txt state=touch
