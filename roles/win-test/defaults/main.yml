@@ -1,2 +1,3 @@
 ---
-# defaults file for win-test
+  working_directory: 'c:\ANSIBLE-WORK\'
+      

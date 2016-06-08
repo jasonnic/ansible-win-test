@@ -1,5 +1,17 @@
 ---
 # Install an MSI, and wait for it to complete before continuing
 
-- name: Copying file test.txt to C:\ANSIBLE_TEST
-  win_msi: path=files/7z920-x64.msi wait=true
+
+- name: Create {{working_directory}} if not exist
+  tags: install
+  win_file: path={{working_directory}} state=directory
+
+- name: Push test file to server
+  tags: install
+  win_copy: src=files/7z920-x64.msi dest={{working_directory}} 
+  register: test_installer
+          
+      
+- name: Install 7zip 
+  win_msi: path={{working_directory}}7z920-x64.msi wait=true
+  when: test_installer.stat.exists
