@@ -1,0 +1,9 @@
+---
+
+- hosts: test
+  # strategy: serial
+  # serial: "33%"
+  become: yes
+  
+  roles:
+    - {role: win-test}

@@ -1,0 +1,6 @@
+---
+# tasks file for win-test
+
+- include: create_file.yml
+- include: copy_file.yml
+      

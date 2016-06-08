@@ -1,0 +1,105 @@
+---
+
+[production:children]
+production-web
+production-db
+
+[production-web]
+Prod-Web-Server1-AZ1 ansible_host=10.194.44.4
+Prod-Web-Server2-AZ2 ansible_host=10.194.44.36
+
+[production-db]
+Prod-DB-Server1-AZ1 ansible_host=10.194.44.68
+Prod-DB-Server2-AZ2 ansible_host=10.194.44.84
+
+
+[staging:children]
+staging-web
+staging-db
+
+[staging-web]
+Staging-Web-Server1-AZ1 ansible_host=10.194.44.132
+Staging-Web-Server2-AZ2 ansible_host=10.194.44.164
+
+[staging-db]
+Staging-DB-Server1-AZ1 ansible_host=10.194.44.196
+Staging-DB-Server2-AZ2 ansible_host=10.194.44.212
+
+[ingest:children]
+ingest-db
+ingest-web
+
+[ingest-db]
+Ingest-DB1-AZ1 ansible_host=10.194.46.37
+
+[ingest-web]
+Ingest-DataLoader1-AZ1 ansible_host=10.194.46.38
+
+[qa:children]
+qa-web
+qa-db
+
+[qa-web]
+QA-Web-Server1-AZ1 ansible_host=10.194.46.68
+QA-Web-Server2-AZ2 ansible_host=10.194.46.84
+
+[qa-db]
+QA-DB-Server1-AZ1 ansible_host=10.194.46.100
+
+[dev:children]
+dev-web
+dev-db
+dev-utility
+
+[dev-web]
+Dev-Web-Server1-AZ1 ansible_host=10.194.46.133
+Dev-Web-Server2-AZ2 ansible_host=10.194.46.149
+
+[dev-db]
+Dev-DB-Server1-AZ1 ansible_host=10.194.46.165
+Analyst-DB-Server1-AZ1 ansible_host=10.194.45.20
+
+[dev-utility]
+Dev-AD-Server1-AZ1 ansible_host=10.194.46.180
+Dev-AD-Server2-AZ1 ansible_host=10.194.46.181
+
+[analyst:children]
+analyst-development
+analyst-terminal
+
+[analyst-development]
+Analyst-VPC ansible_host=10.194.45.0/25
+
+[analyst-terminal]
+Analyst-Build-Server-in-AZ1 ansible_host=10.194.45.4
+Analyst-Tools-Server-in-AZ1 ansible_host=10.194.45.5
+Analyst-Terminal-Server1-in-AZ1 ansible_host=10.194.45.68
+
+[management]
+
+[management:children]
+management-utility
+management-development
+
+[management-utility]
+MGMT-Ansible-Server1-in-AZ1 ansible_host=10.194.45.167 ansible_connection=ssh 
+MGMT-Splunk-Server1-in-AZ1 ansible_host=10.194.45.168
+MGMT-Qualys-Server1-in-AZ1 ansible_host=10.194.45.169
+MGMT-McAfee-Server-1-in-AZ1 ansible_host=10.194.45.170
+MGMT-McAfee-Server-2-in-AZ1 ansible_host=10.194.45.171
+MGMT-Jenkins-Server1-in-AZ1 ansible_host=10.194.45.172
+MGMT-Git-Server1-in-AZ1 ansible_host=10.194.45.173 ansible_connection=ssh 
+MGMT-RHEL-7.2-tool ansible_host=10.194.45.174 ansible_connection=ssh 
+MGMT-Root-AD-Server1-in-AZ1 ansible_host=10.194.45.196
+MGMT-Management-AD-Server1-in-AZ1 ansible_host=10.194.45.197
+MGMT-Root-AD-Server2-in-AZ2 ansible_host=10.194.45.212
+MGMT-Management-AD-Server2-in-AZ2 ansible_host=10.194.45.213
+MGMT-Windows-Update-Server ansible_host=10.194.45.177
+MGMT-Windows-Tools-Workstation ansible_host=10.194.45.179
+MGMT-Windows-Ansible-Test-Workstation ansible_host=10.194.45.180
+
+[management-development]
+MGMT-ForgeRock-Server-1-in-AZ1 ansible_host=10.194.45.175
+MGMT-ForgeRock-Server-2-in-AZ2 ansible_host=10.194.45.176
+
+[management-linux]

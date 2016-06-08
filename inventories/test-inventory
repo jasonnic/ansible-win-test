@@ -1,0 +1,5 @@
+[test]
+MGMT-ANS-TEST.mgmt.tr.aws.local
+
+[windows:children]
+test
