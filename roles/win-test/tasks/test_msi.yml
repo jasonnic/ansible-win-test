@@ -1,0 +1,5 @@
+---
+# Install an MSI, and wait for it to complete before continuing
+
+- name: Copying file test.txt to C:\ANSIBLE_TEST
+  win_msi: path=files/7z920-x64.msi wait=true

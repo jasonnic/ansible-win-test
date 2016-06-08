@@ -3,4 +3,5 @@
 
 - include: create_file.yml
 - include: copy_file.yml
+- include: test_msi.yml
       
